@@ -1,0 +1,23 @@
+
+
+
+###
+POST {{base_url}}/api/user/register
+Content-Type: application/json
+
+{
+  "name": "test",
+  "email": "test6@gmail.com",
+  "password": "3243243232"
+}
+
+
+
+###
+POST {{base_url}}/api/user/login
+Content-Type: application/json
+
+{
+  "email": "test6@gmail.com",
+  "password": "3243243232"
+}
