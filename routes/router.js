@@ -6,6 +6,7 @@ const productCategory  = require('../controllers/product-category.controller');
 const authModdleware = require('../middlewares/authentication');
 const { register, login } = require('../controllers/user.controller');
 const validation = require('../middlewares/model-validation');
+const kafkaController = require('../controllers/kafka.contorller');
 
 //User Routes
 router.post('/user/register', validation.bodyValidator(userValidator.userRegistration), register);
@@ -20,5 +21,9 @@ router.post('/product-category/delete', validation.bodyValidator(productCategory
 router.post('/product-category/search', validation.bodyValidator(productCategoryValidator.filterPorudctCategory), productCategory.searchProudctCategory);
 router.post('/product-category/filter', productCategory.filterPorudctCategory);
 
+
+router.post('/kafka/create-topic', kafkaController.createTopic);
+router.post('/kafka/run-producer', kafkaController.runProducer);
+router.get('/kafka/topics', kafkaController.listTopics);
 
 module.exports = router;

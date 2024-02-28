@@ -1,0 +1,21 @@
+
+###
+POST {{base_url}}/api/kafka/create-topic
+Content-Type: application/json
+
+{
+  "topic": "test2"
+}
+
+###
+POST {{base_url}}/api/kafka/run-producer
+Content-Type: application/json
+
+{
+  "topic": "test2",
+  "message": "this is ultimate"
+}
+
+###
+{{base_url}}/api/kafka/topics
+Content-Type: application/json

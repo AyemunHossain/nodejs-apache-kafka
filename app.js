@@ -7,7 +7,8 @@ const compression = require('compression');
 const cors = require('cors');
 const errorHandler = require('./middlewares/route-error-handler');
 const router = require('./routes/router');
-const checkKafka = require('./services/apache_kafka');  
+
+
 app.use(compression());
 app.use(cors());
 app.use(express.json({ limit: "30mb", extended: true }));
